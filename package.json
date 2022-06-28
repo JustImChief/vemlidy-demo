@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "prebuild": "npm run server:build && node dist/server.js",
-    "build": "webpack --config scripts/webpack.config.client.ts --mode production",
+    "build": "webpack --config scripts/webpack.config.ts --mode production",
     "server:build": "webpack --config scripts/webpack.config.server.ts --mode production",
-    "server:start": "npm run server:build && node dist/server.js",
+    "prestart": "npm run server:build && pm2 start dist/server.js",
     "start": "webpack --config scripts/webpack.config.client.ts --mode development --watch"
   },
   "repository": {
@@ -44,6 +43,7 @@
     "mini-css-extract-plugin": "^2.6.1",
     "nodemon": "^2.0.18",
     "null-loader": "^4.0.1",
+    "pm2": "^5.2.0",
     "postcss-loader": "^7.0.0",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.53.0",
