@@ -1,0 +1,5 @@
+$xs:     576px;
+$xl:     992px;
+
+$mobile: '(max-width: #{$xs})';
+$tablet: '(min-width: #{$xs + 1}) and (max-width: #{$xl})';

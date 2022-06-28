@@ -1,0 +1,23 @@
+@use 'sass:math';
+@import 'breakpoints';
+
+:root {
+  --header-size:      163px;
+  --header-container: calc(var(--header-size) - 8px);
+  --header-half:      calc(var(--header-container) / 2);
+  --logo-indent:      calc(var(--header-half) - var(--logo-size) / 2);
+  --logo-size:        140px;
+  --footer-size:      190px;
+
+  @media #{$tablet} {
+    --header-size: 120px;
+    --logo-size:   105px;
+    --footer-size: 150px;
+  }
+
+  @media #{$mobile} {
+    --header-size: 100px;
+    --logo-size:   85px;
+    --footer-size: 120px;
+  }
+}

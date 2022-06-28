@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "isolatedModules": true,
+    "lib": [
+      "esnext"
+    ],
+    "module": "esnext",
+    "target": "es6"
+  },
+  "exclude": [
+    "../src"
+  ],
+  "extends": "../tsconfig.json",
+  "include": [
+    "./"
+  ]
+}

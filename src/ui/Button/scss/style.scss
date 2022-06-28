@@ -1,0 +1,24 @@
+@import '../../../assets/scss/vars';
+
+button {
+  border:           0;
+  height:           55px;
+  width:            55px;
+  border-radius:    50%;
+  cursor:           pointer;
+  background-color: $pacific-blue;
+  color:            $white;
+  font-size:        36px;
+
+  @media #{$tablet} {
+    height:           50px;
+    width:            50px;
+    font-size:        30px;
+  }
+
+  @media #{$mobile} {
+    height:           45px;
+    width:            45px;
+    font-size:        24px;
+  }
+}

@@ -1,0 +1,170 @@
+@use 'sass:math';
+@import 'src/assets/scss/vars';
+
+header {
+  padding:    16px 18px;
+  position:   relative;
+  height:     var(--header-size);
+  box-sizing: content-box;
+
+  .union {
+    position: absolute;
+    top:      16px;
+    left:     18px;
+    height:   163px;
+  }
+
+  .container {
+    position:        relative;
+    height:          95px;
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+    padding:         0 9px 0 calc(var(--header-half) * 2.25);
+
+    > * {
+      z-index: 1;
+    }
+  }
+
+  .logo {
+    width:    var(--header-container);
+    height:   var(--header-container);
+    position: absolute;
+    padding:  var(--logo-indent);
+    top:      0;
+    left:     4px;
+    z-index:  1;
+
+    span {
+      border:              4px solid $pacific-blue;
+      box-sizing:          content-box;
+      width:               calc(var(--logo-size) - 8px);
+      height:              calc(var(--logo-size) - 8px);
+      display:             block;
+      border-radius:       50%;
+      background-color:    $pacific-blue;
+      position:            absolute;
+      top:                 var(--logo-indent);
+      left:                var(--logo-indent);
+      z-index:             1;
+      cursor:              pointer;
+      background-image:    url('../../../assets/images/logo.png');
+      background-repeat:   no-repeat;
+      background-position: center center;
+      background-size:     calc(var(--logo-size) / 1.75);
+
+      &:before {
+        content:             '';
+        display:             block;
+        border:              3px solid $pacific-blue;
+        width:               calc(var(--logo-size) - 8px);
+        height:              calc(var(--logo-size) - 8px);
+        position:            absolute;
+        top:                 50%;
+        left:                50%;
+        transform:           translate(-50%, -50%);
+        border-radius:       50%;
+        transition:          border-color 0.15s ease;
+        background-image:    url('../../../assets/images/magnifier.svg');
+        background-repeat:   no-repeat;
+        background-size:     calc(var(--logo-size) / 2);
+        background-position: calc(50% + var(--logo-size) / 7.8) calc(50% + var(--logo-size) / 11.6);
+      }
+
+      &:hover:before {
+        border-color: $white;
+      }
+    }
+  }
+
+  h1 {
+    flex:          1 1 auto;
+    font-weight:   700;
+    font-size:     48px;
+    text-align:    center;
+    overflow:      hidden;
+    text-overflow: ellipsis;
+    white-space:   nowrap;
+  }
+
+  .extra {
+    display: flex;
+  }
+
+  button {
+    width:               83px;
+    height:              83px;
+    background-repeat:   no-repeat;
+    background-position: center;
+    background-size:     31px;
+    cursor:              pointer;
+
+    &.doc {
+      background-image: url('../../../assets/images/doc.svg');
+    }
+
+    &.info {
+      background-image: url('../../../assets/images/info.svg');
+      margin-left:      12px;
+    }
+  }
+
+  @media #{$tablet} {
+    padding: 12px 14px;
+
+    .union {
+      height: 120px;
+      top:    12px;
+      left:   14px;
+    }
+
+    .container {
+      height:        70px;
+      padding-right: 10px;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    button {
+      width:           56px;
+      height:          56px;
+      background-size: 26px;
+
+      &.info {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  @media #{$mobile} {
+    padding: 8px 10px;
+
+    .union {
+      height: 100px;
+      top:    8px;
+      left:   10px;
+    }
+
+    .container {
+      height:        60px;
+      padding-right: 8px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    button {
+      width:           48px;
+      height:          48px;
+      background-size: 20px;
+
+      &.info {
+        margin-left: 4px;
+      }
+    }
+  }
+}
