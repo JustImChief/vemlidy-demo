@@ -17,7 +17,6 @@ function SSRMiddleware() {
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <meta name='description' content='Steelline Group'>
     <meta name='robots' content='index, follow'>
     <title>Client</title>
     <link rel='stylesheet' href='/assets/css/app.min.css?${version}'/>
